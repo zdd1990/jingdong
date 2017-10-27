@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东-欢迎登陆</title>
+	<link rel="stylesheet" href="css/login.css?v=1">
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+</head>
+<body>
+	<div id="top" class="layout">
+		<img src="img/dog2.png" alt="" class="dog">
+		<span class="topspan">欢迎登录</span>
+		<img src="img/message.png" alt="" class="mes">
+		<a href="">登录页面，调查问卷</a>
+	</div>
+	<div class="middle" class="layout">
+		<div class="login">
+			<div class="tit">
+				<a href="#saod" class="styl active">扫码登录</a>
+				<a href="#shoujid" class="styr">账号登录</a>
+			</div>
+			<div id="saod" style="">
+				<img src="img/show.png" alt="" class="show">
+				<img src="img/p.png" alt="" class="p">
+				<div class="point1">
+					打开<a href="">手机京东</a>扫描二维码
+				</div>
+				<div class="point2">
+					<p class="p1"></p>
+					<span>免输入</span>
+					<p class="p2"></p>
+					<span>更快</span>
+					<p class="p3"></p>
+					<span>更安全</span>
+				</div>
+			</div>
+			<div id="shoujid" style="display: none">
+				<div class="yonghu">
+					<img src="img/yonghu.png" alt="">
+					<input type="text" placeholder="邮箱/用户名/已验证手机" class="inp1">
+				</div>
+				<div class="mima">
+					<img src="img/mima.png" alt="">
+					<input type="password" placeholder="密码" class="inp1">
+				</div>
+				<a href="">忘记密码</a>
+				<input type="submit" value="登录" class="sub">
+			</div>
+			<div class="log">
+				<img src="img/qq.png" alt="">
+				<a href="">QQ</a> &nbsp;|
+				<img src="img/weixin.png" alt="">
+				<a href="">微信</a>
+			</div>
+			<div class="leg">
+				<img src="img/pwd.png" alt="">
+				<a href="">立即注册</a>
+			</div>
+		</div>	
+	</div>
+	<div class="bottom">
+		<div class="bottop">
+			<a href="">关于我们</a>|    
+			<a href="">联系我们</a>|
+			<a href="">人才招聘</a>|
+			<a href="">商家入驻</a>|
+			<a href="">广告服务</a>|
+			<a href="">手机京东</a>|
+			<a href="">友情链接</a>|
+			<a href="">销售联盟</a>|
+			<a href="">京东社区</a>|
+			<a href="">京东公益</a>|
+			<a href="">EnglishSite</a>
+		</div>
+		<div class="copyright">
+        	Copyright©2004-2016  京东JD.com 版权所有
+    	</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$(".tit .styl").click(function(){
+				$(".tit a").removeClass('active');
+				$(this).addClass('active');
+
+				$("#saod").show();
+				$("#shoujid").hide();
+			});
+
+			$(".tit .styr").click(function(){
+				$(".tit a").removeClass('active');
+				$(this).addClass('active');
+
+				$("#saod").hide();
+				$("#shoujid").show();
+			});
+		});
+	</script>
+</body>
+</html>
