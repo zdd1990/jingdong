@@ -81,117 +81,36 @@ lolist.onmouseout = function(){
 }
 // drowdown下拉列表 品质优惠选你所爱
 var floor = document.querySelectorAll(".floor1");
-
 var downlist = document.querySelectorAll(".downright");
 console.log(floor[0])
 console.log(downlist[0])
-floor[0].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[0].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-downlist[0].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-downlist[0].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor2
-floor[1].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[1].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-downlist[1].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-downlist[1].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor3
-floor[2].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[2].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-downlist[0].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-downlist[0].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor4
-floor[3].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[3].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor5
-floor[4].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[4].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor6
-floor[5].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[5].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor7
-floor[6].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[6].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor8
-floor[7].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[7].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor9
-floor[8].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[8].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor10
-floor[9].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[9].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor11
-floor[10].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[10].onmouseout = function(){
-	downlist[0].style.display = "none";
-}
-// floor12
-floor[11].onmouseover = function(){
-	downlist[1].style.display = "block";
-}
-floor[11].onmouseout = function(){
-	downlist[1].style.display = "none";
-}
-// floor13
-floor[12].onmouseover = function(){
-	downlist[0].style.display = "block";
-}
-floor[12].onmouseout = function(){
-	downlist[0].style.display = "none";
+for(j = 0; j < floor.length;j++){
+	floor[j].index = j;
+	floor[j].onmouseover = function(){
+		var c = this.index % 2;
+		console.log(c)
+		downlist[c].style.display = "block";
+	}
+	floor[j].onmouseout = function(){
+		var c = this.index % 2;
+		downlist[c].index = c;
+		downlist[c].style.display = "none";
+		downlist[c].onmousout = function(){
+			this.style.display = "none";
+		}
+	}	
+	downlist[0].onmouseover = function(){
+			this.style.display = "block";
+		}
+	downlist[0].onmouseout = function(){
+		this.style.display = "none";
+	}
+	downlist[1].onmouseover = function(){
+			this.style.display = "block";
+		}
+	downlist[1].onmouseout = function(){
+		this.style.display = "none";
+	}
 }
 // 轮播图
 var play = document.querySelectorAll(".pic-play");
@@ -227,61 +146,32 @@ setInterval(function(){
 // 时间显示器
 function time(){
 		var mydate = new Date();
-		console.log(mydate)
 		var s = mydate.getSeconds();
-		console.log(s)
 		return s
 	}
-// nav
+// navleft
 var q = document.querySelectorAll(".q");
-console.log(q.length)
-var nav = document.querySelector(".navleft");
-q[0].onmouseover = function(){
-	nav.style.display= "block";
+var na = document.querySelectorAll(".navl");
+for(i = 0;i < q.length; i++){
+	q[i].index = i;
+	q[i].onmouseover = function(){
+		var k = this.index;
+		na[k].style.background = "#d70b1c";
+	}
+	q[i].onmouseout = function(){
+		var k = this.index;
+		na[k].style.background = "#918888";
+	}
 }
-q[0].onmouseout = function(){
-	nav.style.display= "none";
+var nav = document.querySelector(".navleft");		
+document.onmouseover = function(e){
+	var evt = e || document.event;
+	var y = evt.pageY;
+	console.log("x:" + evt.pageX)
+	console.log("y:" + y)
+	if(y > 2200){
+		nav.style.display= "block";
+	}else{
+		nav.style.display= "none";
+	}
 }
-q[1].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[1].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[2].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[2].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[3].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[3].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[4].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[4].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[5].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[5].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[6].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[6].onmouseout = function(){
-	nav.style.display= "none";
-}
-q[7].onmouseover = function(){
-	nav.style.display= "block";
-}
-q[7].onmouseout = function(){
-	nav.style.display= "none";
-}
-	
